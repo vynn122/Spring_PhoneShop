@@ -16,7 +16,7 @@ public class Brand {
     private Long id;
     private String name;
     private String description;
-    private boolean status;
+    private Boolean status = true;
     private String image;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
@@ -27,8 +27,10 @@ public class Brand {
     @PrePersist
     protected void onCreate() {
         this.createdAt = LocalDateTime.now();
-        this.status = true;
+        if (this.status == null) this.status = true;
+
     }
+
 
     @PreUpdate
     protected void onUpdate() {

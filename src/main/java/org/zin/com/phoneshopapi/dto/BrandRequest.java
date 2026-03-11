@@ -3,6 +3,7 @@ package org.zin.com.phoneshopapi.dto;
 
 import jakarta.annotation.Nullable;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Null;
 import lombok.*;
 
 @Data
@@ -20,6 +21,8 @@ public class BrandRequest {
     private String description;
     @Nullable
     private String image;
+    @Nullable
+    private Boolean status;
     private String createdBy;
     private String updatedBy;
 

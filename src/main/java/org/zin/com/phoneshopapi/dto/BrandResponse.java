@@ -11,10 +11,12 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Builder
 public class BrandResponse {
+    private Long id;
     private String name;
     private String description;
     private String image;
-    private String createdBy;
-    private String updatedBy;
+    private boolean status;
+//    private String createdBy;
+//    private String updatedBy;
 
 }

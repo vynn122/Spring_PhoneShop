@@ -21,14 +21,16 @@ public class Category {
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
 
-    private boolean status;
+    private Boolean status = true;
     private String createdBy;
     private String updatedBy;
 
     @PrePersist
     public void onCreate() {
         this.createdAt = LocalDateTime.now();
-        this.status = true;
+        if(this.status == null){
+            this.status = true;
+        }
     }
 
     @PreUpdate
