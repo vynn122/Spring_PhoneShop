@@ -13,9 +13,21 @@ public interface BrandMapper {
     // BrandResponse toDto(Brand brand);
 
     // Create entity from request DTO
+    /**
+     * Convert a BrandRequest DTO to a Brand entity.
+     * 
+     * @param dto the BrandRequest DTO containing the brand data
+     * @return a Brand entity populated with data from the DTO
+     */
     Brand fromRequest(BrandRequest dto);
 
     // Convert entity to response DTO
+    /**
+     * Convert a Brand entity to a BrandResponse DTO.
+     * 
+     * @param brand the Brand entity to convert
+     * @return a BrandResponse DTO containing the brand data from the entity
+     */
     BrandResponse toResponse(Brand brand);
 
     // Update existing entity from request DTO (for PUT/PATCH)

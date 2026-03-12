@@ -13,5 +13,15 @@ spring:
     multipart:
       max-file-size: 5MB
       max-request-size: 10MB
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+# server:
+#   servlet:
+#     context-path: /api
 
-
+# springdoc:
+#   api-docs:
+#     path: /v3/api-docs
+#   swagger-ui:
+#     path: /swagger-ui.html
