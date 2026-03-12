@@ -5,7 +5,7 @@ import org.zin.com.phoneshopapi.entity.DiscountType;
 import lombok.Data;
 
 @Data
-public class VariantRequestDTO {
+public class VariantRequest {
     private Long variantId;
 
     private Double price;
