@@ -1,29 +1,35 @@
 package org.zin.com.phoneshopapi.entity;
 
-
 import jakarta.persistence.*;
 import lombok.Data;
 
 import java.time.LocalDateTime;
 import java.util.List;
 
-
 @Entity
-@Data
 @Table(name = "orders")
+@Data
 public class Order {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private Long userId;
+    @ManyToOne
+    private User user;
 
     private Double totalPrice;
 
-    private String status;
+    private Double discount;
+
+    private Double finalPrice;
 
     private LocalDateTime createdAt;
 
-    @OneToMany(mappedBy = "order")
+    @ManyToOne
+    private Coupon coupon;
+
+    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
     private List<OrderItem> items;
+
 }

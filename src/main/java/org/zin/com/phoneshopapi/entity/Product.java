@@ -1,10 +1,10 @@
 package org.zin.com.phoneshopapi.entity;
 
-
 import jakarta.persistence.*;
 import lombok.Data;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -19,32 +19,22 @@ public class Product {
     private Double averageRating;
     private int reviewCount;
 
-    @OneToMany(mappedBy = "product", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<ProductImage> images;
-    @OneToMany(mappedBy = "product", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<ProductVariant> variants;
-
-
-
-
-
-
+    @OneToMany(mappedBy = "product", cascade = CascadeType.ALL)
+    private List<ProductImage> images = new ArrayList<>();
+    @OneToMany(mappedBy = "product", cascade = CascadeType.ALL)
+    private List<ProductVariant> variants = new ArrayList<>();
 
     // relationship
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne
     private Brand brand;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne
     private Category category;
-
 
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
     private LocalDateTime deletedAt;
-    private String createdBy;
-    private String updatedBy;
     private boolean status;
-
 
     @PrePersist
     protected void onCreate() {

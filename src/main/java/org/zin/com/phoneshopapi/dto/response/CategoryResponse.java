@@ -1,11 +1,12 @@
-package org.zin.com.phoneshopapi.dto;
-
+package org.zin.com.phoneshopapi.dto.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Data@NoArgsConstructor@AllArgsConstructor
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class CategoryResponse {
     private String name;
     private String description;

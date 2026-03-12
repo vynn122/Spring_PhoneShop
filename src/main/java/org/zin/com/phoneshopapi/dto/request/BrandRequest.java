@@ -1,17 +1,16 @@
-package org.zin.com.phoneshopapi.dto;
-
+package org.zin.com.phoneshopapi.dto.request;
 
 import jakarta.annotation.Nullable;
 import jakarta.validation.constraints.NotBlank;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class CategoryRequest {
-    @NotBlank(message = "Name is required")
+@Builder
+public class BrandRequest {
+
+    @NotBlank(message = "name is required")
     private String name;
 
     @Nullable
@@ -20,7 +19,7 @@ public class CategoryRequest {
     private String image;
     @Nullable
     private Boolean status;
-    private String createBy;
-    private String updateBy;
+    private String createdBy;
+    private String updatedBy;
 
 }

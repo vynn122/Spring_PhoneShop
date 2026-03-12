@@ -1,5 +1,4 @@
-package org.zin.com.phoneshopapi.dto;
-
+package org.zin.com.phoneshopapi.dto.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -16,7 +15,7 @@ public class BrandResponse {
     private String description;
     private String image;
     private boolean status;
-//    private String createdBy;
-//    private String updatedBy;
+    // private String createdBy;
+    // private String updatedBy;
 
 }
