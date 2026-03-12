@@ -244,7 +244,7 @@ Example error response:
 
 # 👨‍💻 Author
 
-Developed by **Your Name**
+Developed by **Vin**
 
 ---
 
