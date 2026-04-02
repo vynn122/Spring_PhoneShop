@@ -10,6 +10,12 @@ public class ApiResponse<T> {
     private String message;
     private T data;
 
+
+
+
+
+
+
     /**
      * Static factory method to create a successful ApiResponse instance.
      *
