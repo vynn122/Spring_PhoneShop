@@ -25,7 +25,7 @@ public class Order {
     private Double finalPrice;
 
     private LocalDateTime createdAt;
-
+    private Double totalAmount;
     @ManyToOne
     private Coupon coupon;
 

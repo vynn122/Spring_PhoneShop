@@ -4,6 +4,10 @@ spring:
     username: Vynn
     password: 123
 
+    hikari:
+      maximum-pool-size: 10
+      minimum-idle: 5
+      connection-timeout: 30000
   jpa:
     hibernate:
       ddl-auto: update
@@ -16,6 +20,19 @@ spring:
   mvc:
     pathmatch:
       matching-strategy: ant_path_matcher
+  data:
+    redis:
+      port: 6379
+      host: localhost
+
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: hemtheavin@gmail.com
+    password: jjkg qrfl hnum gtum
+    properties:
+      mail.smtp.auth: true
+      mail.smtp.starttls.enable: true
 # server:
 #   servlet:
 #     context-path: /api

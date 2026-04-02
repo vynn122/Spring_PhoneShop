@@ -15,4 +15,5 @@ public class CartItemResponse {
     private Double price;
 
     private Integer quantity;
+    private Double totalPrice;
 }

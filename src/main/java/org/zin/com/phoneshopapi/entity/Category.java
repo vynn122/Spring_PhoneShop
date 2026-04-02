@@ -1,16 +1,13 @@
 package org.zin.com.phoneshopapi.entity;
 
-
 import jakarta.persistence.*;
 import lombok.Data;
 
 import java.time.LocalDateTime;
 
-
 @Entity
 @Data
 public class Category {
-
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -28,7 +25,7 @@ public class Category {
     @PrePersist
     public void onCreate() {
         this.createdAt = LocalDateTime.now();
-        if(this.status == null){
+        if (this.status == null) {
             this.status = true;
         }
     }
@@ -37,6 +34,5 @@ public class Category {
     public void onUpdate() {
         this.updatedAt = LocalDateTime.now();
     }
-
 
 }

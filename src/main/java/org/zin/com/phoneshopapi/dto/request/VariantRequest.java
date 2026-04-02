@@ -16,4 +16,7 @@ public class VariantRequest {
 
     private DiscountType discountType;
 
+    private String color;
+    private String storage;
+
 }
