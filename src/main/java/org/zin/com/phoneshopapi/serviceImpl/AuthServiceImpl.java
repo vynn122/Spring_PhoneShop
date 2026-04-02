@@ -1,5 +1,6 @@
 package org.zin.com.phoneshopapi.serviceImpl;
 
+import jakarta.mail.MessagingException;
 import org.springframework.context.annotation.Bean;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -44,7 +45,7 @@ public class AuthServiceImpl implements AuthService {
     private final UserMapper userMapper;
 
     @Override
-    public String sendOtp(SendOtpRequest request) {
+    public String sendOtp(SendOtpRequest request) throws MessagingException {
         // Check if email already registered
         if (userRepository.findByEmail(request.getEmail()).isPresent()) {
             throw new EmailAlreadyExistException("Email already registered");

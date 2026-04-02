@@ -1,5 +1,6 @@
 package org.zin.com.phoneshopapi.service;
 
+import jakarta.mail.MessagingException;
 import org.zin.com.phoneshopapi.dto.request.LoginRequest;
 import org.zin.com.phoneshopapi.dto.request.RegisterRequest;
 import org.zin.com.phoneshopapi.dto.request.SendOtpRequest;
@@ -18,7 +19,7 @@ public interface AuthService {
 //    String sendOtp(String email);
 
 
-    String sendOtp(SendOtpRequest request);
+    String sendOtp(SendOtpRequest request) throws MessagingException;
 
     String verifyOtp(VerifyOtpRequest request);
 

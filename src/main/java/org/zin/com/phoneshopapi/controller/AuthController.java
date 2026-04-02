@@ -2,6 +2,7 @@ package org.zin.com.phoneshopapi.controller;
 
 import java.util.Map;
 
+import jakarta.mail.MessagingException;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,7 +37,7 @@ public class AuthController {
 
 
     @PostMapping("/send-otp")
-    public String sendOtp(@RequestBody SendOtpRequest request){
+    public String sendOtp(@RequestBody SendOtpRequest request) throws MessagingException {
         return authService.sendOtp(request);
     }
 
